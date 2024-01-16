@@ -21,7 +21,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # In[2]:
 
 
-df = pd.read_csv('/home/jothammasila/Projects/Datasets/pima-diabetes/diabetes.csv')
+df = pd.read_csv('/pima-diabetes/diabetes.csv')
 
 
 # In[54]:
@@ -59,7 +59,7 @@ sns.pairplot(df,hue="Outcome");
 # In[8]:
 
 
-df = pd.read_csv('/home/jothammasila/Projects/Datasets/pima-diabetes/diabetes.csv')
+df = pd.read_csv('/pima-diabetes/diabetes.csv')
 
 
 # In[9]:
@@ -270,7 +270,7 @@ data = torch.tensor([4, 111, 67,32,7, 30.8,0.887,78])
 
 def prediction(data):
     with torch.no_grad():
-        model = torch.load('/home/jothammasila/Projects/Models/diabetes.pt')
+        model = torch.load('/Models/diabetes.pt')
         outcome = [model(data),model(data).argmax().item()]
     return outcome
 
