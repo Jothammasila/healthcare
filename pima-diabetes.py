@@ -1,16 +1,11 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 # Imports
 import pandas as pd
 import seaborn as sns
 import numpy as np
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import confusion_matrix, accuracy_score, mean_squared_error,mean_absolute_error
+import mlflow
 
 import torch
 import torch.nn as nn
@@ -130,9 +125,9 @@ model.parameters
 # Backward propagation 
 ## a) Define loss function
 ## b) Define the Optimizer
-
+lr = 0.001
 loss_func = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
+optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 
 
 # In[16]:
@@ -195,12 +190,37 @@ plt.xlabel('Actual Value');
 plt.ylabel('Predicted Value');
 
 
-# In[21]:
-
-
 # Accuracy Score
 score = accuracy_score(y_test, predictions)
-score
+
+mae = mean_absolute_error(y_test, predictions)
+mse = mean_squared_error(y_test, predictions)
+rmse = np.sqrt(mse)
+
+
+# Set our tracking server uri for logging
+mlflow.set_tracking_uri(uri="http://127.0.0.1:8080")
+
+# Create a new MLflow Experiment
+mlflow.set_experiment("Pima Diabetes")
+
+
+with mlflow.start_run():
+    
+    # log the hyperparameters
+    mlflow.log_params(epochs)
+    mlflow.log_params(lr)
+    
+    # Log meetrics
+    mlflow.log_metric("accurcay", score)
+    mlflow.log_metric("mae",mae)
+    mlflow.log_metric("mse", mse)
+    mlflow.log_metric("rmse",rmse)
+    
+    # Set a tag that we can use to remind ourselves what this run was for
+    mlflow.set_tag("Training Info", "Deep learning model for Pima diabetes.")
+
+# 
 
 
 # In[45]:
