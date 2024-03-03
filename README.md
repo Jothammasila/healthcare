@@ -42,5 +42,10 @@ Clone the repo and run:
 ```bash
 pip install -q -r requirements.txt
 
+mkdir data
+cd data && mkdir ChromaDB
+touch requirements.txt
+touch .env
+
 
 
