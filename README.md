@@ -5,7 +5,7 @@
 The project, *SmartHealth*, employs machine learning to predict the onset of various health conditions, facilitating early intervention. By analyzing comprehensive patient data, including electronic health records, lifestyle information, and genetic factors, our model identifies subtle patterns indicative of potential health risks. The system aims to provide personalized risk assessments, equipping healthcare professionals with valuable insights for proactive and targeted patient care. *SmartHealth* prioritizes transparency, interpretability, and seamless integration with existing healthcare systems for widespread impact.
 
 
-These projects contain both the `.py` and `.ipynb` files of the projects.
+These projects contain both the `.py` and `.ipynb` files of the projects. The datasets are availabe in the `data` folder.
 
 ### Pima Diabetes
 This project implements a PyTorch deep Diabetic model for predicting the presence or absence of diabetes. A number of eight(8) features were used for the predicting if an individual has diabtes.
@@ -38,5 +38,6 @@ Chroma was used as the vector database for this project.
 Clone the repo and run:
 ```bash
 pip install -q -r requirements.txt
+
 
 
