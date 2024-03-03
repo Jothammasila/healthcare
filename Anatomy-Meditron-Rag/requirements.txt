@@ -1,0 +1,16 @@
+torch
+sentence-transformers==2.2.2
+transformers
+langchain
+fastapi
+uvicorn
+pypdf
+PyPDF2
+jinja2
+qdrant-client
+transformers
+python-multipart
+aiofiles
+pdfquery
+chromadb
+python-dotenv
