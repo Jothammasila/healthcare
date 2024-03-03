@@ -12,7 +12,7 @@ These projects contain both the `.py` and `.ipynb` files of the projects. The da
 
 ### Pima Diabetes
 This project implements a PyTorch deep Diabetic model for predicting the presence or absence of diabetes. A number of eight(8) features were used for the predicting if an individual has diabtes.
-The features are $ Pregnancies	Glucose	BloodPressure SkinThickness Insulin BMI DiabetesPedigreeFunction Age. The pedicted `Output` is either `1 (presence of diabetes)` or `0 (absence of diabetes).`
+The features are `Pregnancies	Glucose	BloodPressure SkinThickness Insulin BMI DiabetesPedigreeFunction Age`. The pedicted `Output` is either `1 (presence of diabetes)` or `0 (absence of diabetes).`
 
 The `dataset` used for this model is the [Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database). This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The objective of the dataset is to diagnostically predict whether or not a patient has diabetes, based on certain diagnostic measurements included in the dataset. Several constraints were placed on the selection of these instances from a larger database. In particular, all patients here are females at least 21 years old of Pima Indian heritage.
 The datasets consists of several medical predictor variables and one target variable, `Outcome`. Predictor variables includes the number of pregnancies the patient has had, their `BMI, insulin level, age`, and so on.
